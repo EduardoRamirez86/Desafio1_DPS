@@ -1,6 +1,7 @@
 'use client';
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import "../css/home.css"; 
 
 function Clase({ horario, setClasesReservadas, clasesReservadas, claseNombre, dia }) {
     const reservarClase = () => {
@@ -36,7 +37,6 @@ function Clase({ horario, setClasesReservadas, clasesReservadas, claseNombre, di
         }
     };
 
-    // Obtener la clase reservada actual
     const claseReservada = clasesReservadas.find(c => c.id === horario.id);
     const cuposDisponibles = claseReservada ? claseReservada.cupos : horario.cupos;
     const estaReservada = !!claseReservada;
@@ -51,7 +51,7 @@ function Clase({ horario, setClasesReservadas, clasesReservadas, claseNombre, di
 
                 {!estaReservada ? (
                     <button
-                        className="btn btn-primary"
+                        className="btn btn-morado"
                         onClick={reservarClase}
                         disabled={cuposDisponibles === 0}
                     >
